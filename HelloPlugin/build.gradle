@@ -1,6 +1,4 @@
 apply plugin: 'groovy'
-apply plugin: 'com.github.dcendents.android-maven'
-apply plugin: 'com.jfrog.bintray'
 
 repositories {
     mavenCentral()
@@ -9,7 +7,6 @@ repositories {
 dependencies {
     compile gradleApi()
     compile localGroovy()
-    compile fileTree(dir: 'libs', include: ['*.jar'])
 }
 
 apply plugin: 'maven'
@@ -21,72 +18,3 @@ uploadArchives {
         pom.artifactId = PROJ_ARTIFACTID
         pom.version = PROJ_VERSION    	}
 }
-
-
-//def siteUrl = 'https://github.com/yangpeiyong/PluginDemo'    // 项目主页
-//def gitUrl = 'https://github.com/yangpeiyong/PluginDemo.git' // 项目的git地址
-//def module_name = 'HelloPlugin'	// 项目的名称
-//group = PROJ_GROUP	// 所在组
-//install {
-//    repositories.mavenInstaller {
-//        // This generates POM.xml with proper parameters
-//        pom {
-//            project {
-//                packaging 'aar'
-//                name 'HelloPlugin' // 名称
-//                url siteUrl
-//                licenses {
-//                    license {
-//                        name 'The Apache Software License, Version 2.0' // 开源协议名称
-//                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt' // 协议地址
-//                    }
-//                }
-//                developers {
-//                    developer {
-//                        id 'yangpeiyong'	// 账号
-//                        name 'yangpeiyong'	// 名称
-//                        email 'yctx@gmail.com' // 邮箱地址
-//                    }
-//                }
-//                scm {
-//                    connection gitUrl
-//                    developerConnection gitUrl
-//                    url siteUrl
-//                }
-//            }
-//        }
-//    }
-//}
-
-//task sourcesJar(type: Jar) {
-//    from android.sourceSets.main.java.srcDirs
-//    classifier = 'sources'
-//}
-//task javadoc(type: Javadoc) {
-//    source = android.sourceSets.main.java.srcDirs
-//    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
-//}
-//task javadocJar(type: Jar, dependsOn: javadoc) {
-//    classifier = 'javadoc'
-//    from javadoc.destinationDir
-//}
-//artifacts {
-//    archives sourcesJar
-//}
-
-//Properties properties = new Properties()
-//properties.load(project.rootProject.file('local.properties').newDataInputStream())
-//
-//bintray {
-//    user = properties.getProperty("bintray.user")
-//    key = properties.getProperty("bintray.apikey")
-//    configurations = ['archives']
-//    pkg {
-//        repo = 'maven'
-//        name = "HelloPlugin"
-//        licenses = ['Apache-2.0']
-//        websiteUrl = siteUrl
-//        vcsUrl = gitUrl
-//        publish = true
-//    }
-//}
